@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Smart Irrigation</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 60, 0, 0.5)),
+        url('6.jpeg');
+      background-size: cover;
+      background-position: center;
+      animation: bgZoom 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgZoom {
+      from { background-size: 100%; }
+      to { background-size: 110%; }
+    }
+
+    .login-box {
+      width: 380px;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 45px 35px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .login-box h2 {
+      margin-bottom: 25px;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 26px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 45px 12px 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #43a047;
+      box-shadow: 0 0 10px rgba(67, 160, 71, 0.4);
+    }
+
+    .input-group i {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #43a047, #2e7d32);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.4);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(27, 94, 32, 0.5);
+    }
+
+    .signup {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .signup a {
+      color: #2e7d32;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .signup a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2><i class="fa-solid fa-seedling"></i> Smart Irrigation</h2>
+
+    <form action="LoginServlet" method="post">
+      <div class="input-group">
+        <input type="text" name="username" placeholder="Enter Username" required>
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p class="signup">
+      New user? <a href="signup.jsp">Create an account</a>
+    </p>
+  </div>
+
+</body>
+</html>
